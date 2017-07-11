@@ -1,0 +1,473 @@
+
+
+
+.header-wrapper
+{
+	position: fixed;
+	top: 0;
+	
+	box-sizing: border-box;
+	width: 100%;
+	height: 66px;
+	padding: 13px 15px;
+	
+	z-index: 1;
+	
+	background-color: #241818;
+	
+	.header
+	{
+		box-sizing: border-box;
+		width: 80%;
+		margin: 0 auto;
+		display: flex;
+		
+		.left-container
+		{
+			box-sizing: border-box;
+			padding: 2px 0;
+			
+			.ib-element
+			{
+				display: inline-block;
+				vertical-align: middle;
+			}
+			
+			.logo
+			{
+				display: block;
+				width: 30px;
+				height: 30px;
+			}
+			
+			.title
+			{
+				margin: 0;
+				margin-left: 4px;
+				font-family: 'Lato', sans-serif;
+				font-size: 18px;
+				font-weight: 600;
+				
+				.title-part-1
+				{
+					color: #0f9e8c;
+				}
+				
+				.title-part-2
+				{
+					color: white;
+				}				
+			}
+		}
+	}
+	
+	&.login-page
+	{
+		.header
+		{
+			.left-container
+			{
+				width: 30%;
+			}
+			
+			.right-container
+			{
+				box-sizing: border-box;
+				width: 70%;
+				padding: 2px 0;
+				text-align: right;
+				
+				.login-form-wrapper
+				{
+					.field-wrapper
+					{
+						display: inline-block;
+						vertical-align: top;
+					}
+					
+					.password-wrapper
+					{
+						margin: 0 15px;
+					}
+					
+					.input-field
+					{
+						box-sizing: border-box;
+						border: 0;
+						border-bottom: 1px solid gray;
+						width: 150px;
+						padding: 4px;
+						
+						background-color: transparent;
+						font-size: 14px;
+						color: rgba(255, 255, 255, 0.5);
+						
+						&::-webkit-input-placeholder {
+						   color: rgba(255, 255, 255, 0.5);
+						}
+
+						&:-moz-placeholder { /* Firefox 18- */
+						   color: rgba(255, 255, 255, 0.5);
+						}
+
+						&::-moz-placeholder {  /* Firefox 19+ */
+						   color: rgba(255, 255, 255, 0.5);
+						}
+
+						&:-ms-input-placeholder {  
+						   color: rgba(255, 255, 255, 0.5);
+						}
+					}
+					
+					.fp-link-container
+					{
+						text-align: left;
+						margin-top: 2px;
+						
+						.fp-link
+						{
+							text-decoration: none;
+							font-size: 12px;
+							color: #ababab;
+						}
+					}
+					
+					.action-btn
+					{
+						box-sizing: border-box;
+						border: 0;
+						padding: 8px 20px;
+						
+						background-color: #477bab;
+						color: white;
+						font-size: 14px;
+						cursor: pointer;
+					}
+					
+					.signin-btn-wrapper, .signup-btn-wrapper
+					{
+						display: none;
+					}
+				}
+			}
+		}
+	}
+	
+	&.feed-page
+	{
+		.header
+		{
+			.mid-container
+			{
+				box-sizing: border-box;
+				width: 60%;
+				padding: 2px 0;
+				display: flex;
+				flex-grow: 1;
+				justify-content: center;
+				align-items: center;
+				
+				.item-wrapper
+				{
+					margin: 0 8px;
+				}
+				
+				.search-wrapper
+				{
+					position: relative;
+					
+					.search-box, .search-icon-container
+					{
+						display: inline-block;
+					}
+					
+					.search-box
+					{
+						box-sizing: border-box;
+						width: 500px;
+						padding: 8px;
+						text-indent: 4px;
+						
+						border: 0;
+						border-radius: 4px;
+						
+						font-size: 14px;
+						color: #777777;
+					}
+					
+					.search-icon-container
+					{
+						box-sizing: border-box;
+						padding: 7px 18px;
+						
+						border-top-right-radius: 4px;
+						border-bottom-right-radius: 4px;
+						
+						position: absolute;
+						top: 0;
+						right: 0;
+						
+						background-color: #efefef;
+					}
+				}
+				
+				.advanced-search-wrapper
+				{
+					color: white;
+					font-size: 18px;
+					
+					cursor: pointer;
+					
+					.as-text, .down-icon
+					{
+						display: inline-block;
+						margin: 0 2px;
+					}
+					
+					.down-icon
+					{
+						font-size: 14px;
+					}
+				}
+			}
+			
+			.right-container
+			{
+				box-sizing: border-box;
+				padding: 2px 0;
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+				
+				.action-btn-container
+				{
+					display: none;
+					margin-left: 30px;
+					
+					color: white;
+					font-size: 20px;
+					
+					cursor: pointer;
+				}
+				
+				.notifications-btn-container
+				{
+					position: relative;
+					
+					.notifications-count
+					{
+						box-sizing: border-box;
+						padding: 1px;
+						position: absolute;
+						top: 0;
+						right: 0;
+						
+						border-radius: 50%;
+						background-color: #dd191b;
+						
+						color: white;
+						font-size: 10px;
+					}
+				}
+				
+				.menu-btn-container, .close-btn-container
+				{
+					&.active
+					{
+						display: initial;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// start of tablet media query section
+// includes widths from 768px to 1280px
+// apple ipads - generally 768 x 1024 px
+// samsung galaxy tabs - generally 800 x 1280 px
+
+@media (min-width: 768px) and (max-width: 1280px)
+{
+	.header-wrapper
+	{
+		&.login-page
+		{
+			padding: 13px 30px;
+			
+			.header
+			{
+				width: 100%;
+				
+				.right-container
+				{
+					.login-form-wrapper
+					{
+						.email-wrapper, .password-wrapper, .action-btn-wrapper
+						{
+							display: none;
+						}
+						
+						.action-btn-wrapper.active
+						{
+							display: inline-block;
+						}
+					}
+				}
+			}
+		}
+		
+		&.feed-page
+		{
+			padding: 13px 20px;
+			
+			.header
+			{
+				width: 100%;
+				
+				.mid-container
+				{
+					display: none;
+				}
+				
+				.right-container
+				{
+					flex-grow: 1;
+					
+					.action-btn-container
+					{
+						display: initial;
+					}
+					
+					.menu-btn-container, .close-btn-container
+					{
+						display: none;
+						
+						&.active
+						{
+							display: initial;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// end of tablet media query section
+
+
+
+// start of mobile media query section
+// includes widths upto 767px
+
+@media (max-width: 767px)
+{
+	.header-wrapper
+	{
+		&.login-page
+		{
+			height: 56px;
+			padding: 9px 10px;
+			
+			.header
+			{
+				width: 100%;
+				
+				.left-container
+				{
+					width: 54%;
+					
+					.title-container
+					{
+						.title
+						{
+							font-size: 16px;
+						}
+					}
+				}
+				
+				.right-container
+				{
+					width: 46%;
+					
+					.login-form-wrapper
+					{
+						.email-wrapper, .password-wrapper, .action-btn-wrapper
+						{
+							display: none;
+						}
+						
+						.action-btn
+						{
+							padding: 8px 15px;
+						}
+						
+						.action-btn-wrapper.active
+						{
+							display: inline-block;
+						}
+					}
+				}
+			}
+		}
+		
+		&.feed-page
+		{
+			padding: 13px 10px;
+			
+			.header
+			{
+				width: 100%;
+				
+				.title-container
+				{
+					.title
+					{
+						font-size: 16px;
+					}
+				}
+				
+				.mid-container
+				{
+					display: none;
+				}
+				
+				.right-container
+				{
+					flex-grow: 1;
+					
+					.action-btn-container
+					{
+						display: initial;
+						margin-left: 10%;
+					}
+					
+					.menu-btn-container, .close-btn-container
+					{
+						display: none;
+						
+						&.active
+						{
+							display: initial;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// end of mobile media query section
+
+
+
+
+
+
+
+
+
+

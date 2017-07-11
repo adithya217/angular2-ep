@@ -1,0 +1,82 @@
+
+<div class="post-wrapper">
+	<div class="post-row user-info">
+		<div class="ui-column image-column">
+			<div class="image-wrapper">
+				<img class="user-image" style="background-color:#ababab;" [attr.src]="post.publisherImageUrl ? post.publisherImageUrl : null">
+			</div>
+		</div>
+		
+		<div class="ui-column text-column">
+			<div class="text-row user-name">{{post.publisherName}}</div>
+			<div class="text-row metadata">
+				<span *ngIf="post.isPosted()">Posted an</span>
+				<span *ngIf="post.isShared()">Shared</span>
+				<span *ngIf="post.isShared()" class="user-link">{{post.originalPublisherName}}'s</span>
+				<span *ngIf="post.isSponsored()">Sponsored</span>
+				<span class="article-link">Article</span>
+				<span>&nbsp;-&nbsp;</span>
+				<span>{{post.getFormattedTime()}}</span>
+			</div>
+		</div>
+		
+		<div *ngIf="post.isFollowable && post.isFollowed" class="ui-column follow-status-column">
+			<div class="fs-box following-box active">Following</div>
+		</div>
+		
+		<div *ngIf="post.isFollowable && !post.isFollowed" class="ui-column follow-status-column">
+			<div class="fs-box follow-box active">
+				<div class="fi-wrapper">
+					<i class="fa fa-plus-square icon" aria-hidden="true"></i>
+				</div>
+				<div class="text">Follow</div>
+				<div class="fi-wrapper">
+					<i class="fa fa-chevron-down icon" aria-hidden="true"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+	<div class="post-row post-image-holder">
+		<img class="post-image" style="height:250px;background-color:#ababab;" [attr.src]="post.postImageUrl ? post.postImageUrl : null">
+	</div>
+		
+	<div class="post-row post-text">
+		<div class="post-title-wrapper">
+			<h4 class="post-title">{{post.postTitle}}</h4>
+		</div>
+		
+		<div class="post-story">
+			<p *ngFor="let para of post.postContent" class="story-para">{{para}}</p>
+		</div>
+		
+		<div *ngIf="post.showMore" class="show-more-box">
+			<div class="show-more">Show more...</div>
+		</div>
+	</div>
+		
+	<div class="post-row post-actions-wrapper">
+		<div class="action-item upvote-wrapper">
+			<i class="fa fa-thumbs-o-up icon" aria-hidden="true"></i>
+		</div>
+		<div class="action-item love-wrapper">
+			<i class="fa fa-heart-o icon" aria-hidden="true"></i>
+		</div>
+		<div class="action-item share-wrapper">
+			<div class="element share-icon-wrapper">
+				<i class="fa fa-share icon" aria-hidden="true"></i>
+			</div>
+			<div class="element expand-icon-wrapper">
+				<i class="fa fa-sort-desc icon" aria-hidden="true"></i>
+			</div>
+		</div>
+		<div class="action-item comment-wrapper">
+			<input type="text" class="input-field comment-field" placeholder="Add a comment">
+			<div class="icon-wrapper">
+				<i class="fa fa-paper-plane" aria-hidden="true"></i>
+			</div>
+		</div>
+	</div>
+</div>
+
+					

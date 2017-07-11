@@ -1,0 +1,81 @@
+<section class="content-wrapper">
+	<div class="mid-content">
+		<div class="sisu-container">
+			<div class="sisu-content">
+				<div class="quote-content">
+					<div class="quote-text line-1">
+						It was sometime before he obtained
+					</div>
+					<div class="quote-text line-2">
+						Any answer, and the reply, when made was unpropitious
+					</div>
+				</div>
+				<div class="s-container su-container" [class.active]="showSUContainer">
+					<form class="form" method="POST" action="#">
+						<div class="form-wrapper signup-form-wrapper">
+							<!--
+							<div class="field-wrapper username-wrapper">
+								<input type="text" name="username" placeholder="User Name" class="input-field username-input">
+							</div>
+							-->
+							<div class="field-wrapper firstname-wrapper">
+								<input type="text" name="firstname" placeholder="First Name" class="input-field firstname-input">
+							</div>
+							<div class="field-wrapper lastname-wrapper">
+								<input type="text" name="lastname" placeholder="Last Name" class="input-field lastname-input">
+							</div>
+							<div class="field-wrapper email-wrapper">
+								<input type="email" name="email" placeholder="Email" class="input-field email-input">
+							</div>
+							<div class="field-wrapper password-wrapper">
+								<input type="password" name="password" placeholder="Password" class="input-field pwd-input">
+							</div>
+							<div class="field-wrapper iagree-wrapper">
+								<input type="checkbox" name="iagree" class="input-field iagree-input">
+								<label class="iagree-label">By Signing up, I agree to the <a class="terms-link" href="#">Terms &amp; Conditions</a></label>
+							</div>
+							<div class="field-wrapper action-btn-wrapper signup-btn-wrapper">
+								<button type="button" class="action-btn signup-btn" (click)="createAccount()">Create Account</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="s-container si-container" [class.active]="showSIContainer">
+					<form class="form" method="POST" action="#">
+						<div class="form-wrapper signin-form-wrapper active">
+							<div class="field-wrapper email-wrapper">
+								<input type="email" name="email" placeholder="Email" class="input-field email-input">
+							</div>
+							<div class="field-wrapper password-wrapper">
+								<input type="password" name="password" placeholder="Password" class="input-field pwd-input">
+							</div>
+							<div class="field-wrapper fp-wrapper">
+								<a class="fp-link" href="#">Forgot Password?</a>
+							</div>
+							<div class="field-wrapper action-btn-wrapper signin-btn-wrapper">
+								<button type="button" class="action-btn signin-btn" (click)="login()">Login</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="help-container">
+			<div class="help-item hi-1">Need any help ?</div>
+			<div class="help-item hi-2">Got problems with creating an account? Don't worry.</div>
+			<div class="help-item hi-3">
+				<a class="help-link faq-link" href="#">Check FAQ</a>
+				<span> or contact our support team</span>
+			</div>
+			<div class="help-item hi-4">
+				<span>Call us at </span>
+				<a class="help-link callus-link" href="tel:(888)457-4445">(888)457-4445</a>
+			</div>
+			<div class="help-item hi-5">
+				<i class="fa fa-envelope-o email-icon"></i>
+				<span>Email us at </span>
+				<a class="help-link mail-link" href="#">info@eduportal.com</a>
+			</div>
+		</div>
+	</div>
+</section>

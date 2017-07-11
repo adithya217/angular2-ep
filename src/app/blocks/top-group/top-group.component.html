@@ -1,0 +1,42 @@
+
+<div class="top-group">
+	<div class="group-row contacts-row">
+		<div class="icon-container">
+			<i class="fa fa-newspaper-o icon" aria-hidden="true"></i>
+		</div>
+		
+		<div class="text-container">
+			<span class="text">CONTACTS</span>
+		</div>
+		
+		<div *ngIf="newContactsCount" class="notifications-container">
+			<span class="notifications-count">{{newContactsCount}}</span>
+			<span class="hint-text">New</span>
+		</div>
+	</div>
+	
+	<div class="group-row mid-row messages-row">
+		<div class="icon-container">
+			<i class="fa fa-envelope-o icon" aria-hidden="true"></i>
+		</div>
+		
+		<div class="text-container">
+			<span class="text">MESSAGES</span>
+		</div>
+		
+		<div *ngIf="newMessagesCount" class="notifications-container">
+			<span class="notifications-count">{{newMessagesCount}}</span>
+			<span class="hint-text">New</span>
+		</div>
+	</div>
+	
+	<div class="group-row profile-row">
+		<div class="icon-container">
+			<i class="fa fa-user icon" aria-hidden="true"></i>
+		</div>
+		
+		<div class="text-container">
+			<span class="text">PROFILE</span>
+		</div>
+	</div>
+</div>

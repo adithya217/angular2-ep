@@ -1,0 +1,24 @@
+
+<div class="content-group rcm-group">
+	<div class="content-box rcm-content">
+		<div class="title-box">
+			Recommended
+		</div>
+		
+		<div class="rcms-box">
+			<div class="rcm-box" *ngFor="let recommendation of recommendations; let firstItem = first; let lastItem = last;" [class.first-row]="firstItem" [class.last-row]="lastItem">
+				<div class="title">{{recommendation.title}}</div>
+				
+				<div class="image-holder" *ngIf="recommendation.imageUrl">
+					<img class="image" src="../../../assets/{{recommendation.imageUrl}}">
+				</div>
+				
+				<div class="text-holder">{{recommendation.textContent}}</div>
+			</div>
+		</div>
+		
+		<div class="show-more-box" *ngIf="showMore">
+			<div class="show-more">Show more...</div>
+		</div>
+	</div>
+</div>

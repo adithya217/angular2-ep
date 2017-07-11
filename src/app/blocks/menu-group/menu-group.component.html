@@ -1,0 +1,28 @@
+<div class="content-group {{groupInfo.groupName}}-group">
+	<div class="group-row header-row">
+		<div class="icon-container">
+			<i class="fa {{groupInfo.headerIconClassName}} icon" aria-hidden="true"></i>
+		</div>
+		
+		<div class="text-container">
+			<span class="text">{{groupInfo.headerName}}</span>
+		</div>
+		
+		<div class="action-btn-container collapse-btn" *ngIf="groupInfo.isExpanded" (click)="toggleExpand()">
+			<i class="fa fa-minus-circle" aria-hidden="true"></i>
+		</div>
+		
+		<div class="action-btn-container expand-btn" *ngIf="groupInfo.isCollapsed" (click)="toggleExpand()">
+			<i class="fa fa-plus-circle" aria-hidden="true"></i>
+		</div>
+	</div>
+	
+	<div *ngIf="groupInfo.isExpanded" class="row-items">
+		<div class="group-row hideable-row" *ngFor="let rowItem of groupInfo.items; let firstItem = first; let lastItem = last;" [class.first-row]="firstItem" [class.last-row]="lastItem">
+			<div class="icon-container empty"></div>
+			<div class="text-container">
+				<span class="text">{{rowItem.itemName}}</span>
+			</div>
+		</div>
+	</div>
+</div>

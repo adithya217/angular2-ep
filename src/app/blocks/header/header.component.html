@@ -1,0 +1,73 @@
+<section class="header-wrapper" [class.login-page]="headerModel.loginPageMode" [class.feed-page]="headerModel.feedPageMode">
+	<header class="header">
+		<!-- Should the entire header be encased in a link to home page? -->
+		<div class="left-container">
+			<div class="ib-element logo-container">
+				<img class="logo" src="../../../assets/images/logo.png">
+			</div>
+			<div class="ib-element title-container">
+				<h1 class="title">
+					<span class="title-part-1">EDU</span>
+					<span class="title-part-2">PORTAL</span>
+				</h1>
+			</div>
+		</div>
+		
+		<div class="right-container" *ngIf="headerModel.loginPageMode">
+			<form class="form" method="POST" action="#">
+				<div class="login-form-wrapper">
+					<div class="field-wrapper email-wrapper">
+						<input type="email" name="email" placeholder="Email" class="input-field email-input">
+					</div>
+					<div class="field-wrapper password-wrapper">
+						<input type="password" name="password" placeholder="Password" class="input-field pwd-input">
+						<div class="fp-link-container">
+							<a class="fp-link" href="#">Forgot password?</a>
+						</div>
+					</div>
+					<div class="field-wrapper action-btn-wrapper login-btn-wrapper">
+						<button type="button" class="action-btn login-btn">Login</button>
+					</div>
+					<div class="field-wrapper action-btn-wrapper signin-btn-wrapper" [class.active]="showMobileSigninBtn" (click)="toggleAuthBtns()">
+						<button type="button" class="action-btn signin-btn">Login</button>
+					</div>
+					<div class="field-wrapper action-btn-wrapper signup-btn-wrapper" [class.active]="showMobileSignupBtn" (click)="toggleAuthBtns()">
+						<button type="button" class="action-btn signup-btn">Create Account</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		
+		<div class="mid-container" *ngIf="headerModel.feedPageMode">
+			<div class="item-wrapper search-wrapper">
+				<input type="text" placeholder="Find Tests, Contacts, Books..." class="search-box">
+				<div class="search-icon-container">
+					<i class="fa fa-search icon search-icon" aria-hidden="true"></i>
+				</div>
+			</div>
+			<div class="item-wrapper advanced-search-wrapper">
+				<span class="as-text">Advanced Search</span>
+				<i class="fa fa-chevron-down icon down-icon" aria-hidden="true"></i>
+			</div>
+		</div>
+		
+		<div class="right-container" *ngIf="headerModel.feedPageMode">
+			<div class="action-btn-container newpost-btn-container">
+				<i class="fa fa-file-text icon newpost-icon" aria-hidden="true"></i>
+			</div>
+			<div class="action-btn-container edit-btn-container">
+				<i class="fa fa-pencil-square icon edit-icon" aria-hidden="true"></i>
+			</div>
+			<div class="action-btn-container notifications-btn-container">
+				<i class="fa fa-bell icon notifications-icon" aria-hidden="true"></i>
+				<div class="notifications-count" *ngIf="headerModel.notificationCount">{{headerModel.notificationCount}}</div>
+			</div>
+			<div class="action-btn-container menu-btn-container" [class.active]="showMenuBtn" (click)="toggleMenu()">
+				<i class="fa fa-bars icon menu-icon" aria-hidden="true"></i>
+			</div>
+			<div class="action-btn-container close-btn-container" [class.active]="showCloseBtn" (click)="toggleMenu()">
+				<i class="fa fa-times icon close-icon" aria-hidden="true"></i>
+			</div>
+		</div>
+	</header>
+</section>

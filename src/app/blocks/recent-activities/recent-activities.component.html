@@ -1,0 +1,24 @@
+
+<div class="content-group ra-group">
+	<div class="content-box ra-content">
+		<div class="title-box">
+			Recent Activity
+		</div>
+		
+		<div class="ra-updates">
+			<div class="ra-update" *ngFor="let recentActivity of recentActivities; let firstItem = first; let lastItem = last;" [class.first-row]="firstItem" [class.last-row]="lastItem">
+				<div class="image-holder">
+					<img class="image" src="../../../assets/{{recentActivity.userImageUrl}}">
+				</div>
+				<div class="text-holder">
+					<span class="contact-name">{{recentActivity.userName}}</span>
+					<span class="update-text">{{recentActivity.userAction}}</span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="show-more-box" *ngIf="showMore">
+			<div class="show-more">Show more...</div>
+		</div>
+	</div>
+</div>

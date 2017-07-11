@@ -1,0 +1,45 @@
+
+<div class="content-group profile-group">
+	<div class="profile-info info-1">
+		<div class="info-item picture-wrapper">
+			<div class="image-holder">
+				<img class="profile-img" src="{{profileInfo.profileImageUrl}}">
+			</div>
+			
+			<div class="cam-icon-holder">
+				<i class="fa fa-camera icon" aria-hidden="true"></i>
+			</div>
+		</div>
+		
+		<div class="info-item text-wrapper">
+			<div class="name">{{profileInfo.name}}</div>
+			<div class="profession">{{profileInfo.profession}}</div>
+			<div class="education">{{profileInfo.education}}</div>
+			<div class="institution">{{profileInfo.institution}}</div>
+			<div class="location">
+				<div class="location-item city">{{profileInfo.city}}</div>
+				<div class="location-item border-element"></div>
+				<div class="location-item country">{{profileInfo.country}}</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="profile-info info-2">
+		<div class="info-item li-wrapper">
+			<div class="item-wrapper icon-wrapper">
+				<i class="fa fa-cog" aria-hidden="true"></i>
+			</div>
+			<div class="item-wrapper li-link">{{profileInfo.linkedInUrl}}</div>
+		</div>
+		<div class="info-item border-element"></div>
+		<div class="info-item conn-count-wrapper">
+			<div class="item-wrapper icon-wrapper">
+				<i class="fa fa-users" aria-hidden="true"></i>
+			</div>
+			<div class="item-wrapper conn-count-holder">
+				<span class="conn-count">{{profileInfo.connectionCount}}</span>
+				<span class="conn-text">Connections</span>
+			</div>
+		</div>
+	</div>
+</div>

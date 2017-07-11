@@ -1,0 +1,166 @@
+<section class="content-wrapper">
+	<section class="content-section left-content-container" [class.visible]="showMobileMenu">
+		<div class="groups-container">
+			<my-top-group [newContactsCount]="newContactsCount" [newMessagesCount]="newMessagesCount"></my-top-group>
+			<my-menu-group *ngFor="let menuGroup of menuGroups" [groupInfo]="menuGroup"></my-menu-group>
+		</div>
+	</section>
+	
+	<section class="content-section mid-content-container">
+		<div class="groups-container">
+			<my-profile [profileInfo]="profileInfo"></my-profile>
+			
+			<div class="content-group posts-group">
+				<div class="filter-wrapper">
+					<div class="filter-container">
+						<div class="icon-holder">
+							<i class="fa fa-filter icon" aria-hidden="true"></i>
+						</div>
+						<div class="text-holder">
+							All Entries
+						</div>
+					</div>
+				</div>
+				
+				<div class="posts-wrapper" infinite-scroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="100" [immediateCheck]="true" [infiniteScrollDisabled]="!loadMorePosts" (scrolled)="onLoadMorePosts()">
+					<my-post *ngFor="let post of posts" [post]="post"></my-post>
+					<div class="loading-icon-holder" *ngIf="showPostsLoadingIcon">
+						<img class="loading-icon" src="../../../assets/images/loading.gif">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section class="content-section right-content-container">
+		<div class="groups-container">
+			<div class="content-group common-group">
+				<div class="content-box ut-box">
+					<div class="title-box">
+						Upcoming Tests
+					</div>
+					<div class="label-box">
+						No upcoming test?
+					</div>
+					<div class="hint-box">
+						Find out what's happening in your area in the near future.
+					</div>
+					<div class="action-link-box">
+						<i class="fa fa-chevron-right icon" aria-hidden="true"></i>
+						<span>Find tests</span>
+					</div>
+				</div>
+				
+				<div class="content-box amv-box">
+					<div class="title-box">
+						Articles Most Viewed
+					</div>
+					
+					<div class="articles-box">
+						<div class="article-box first-article">
+							<div class="image-holder">
+								<img class="image" src="../../../assets/images/logo.png">
+							</div>
+							<div class="text-holder">
+								Toward a social pedagogy of classroom group work
+							</div>
+						</div>
+						
+						<div class="article-box">
+							<div class="image-holder">
+								<img class="image" src="../../../assets/images/logo.png">
+							</div>
+							<div class="text-holder">
+								Achievement Goals and Achievement Goal Orientations in Education
+							</div>
+						</div>
+						
+						<div class="article-box">
+							<div class="image-holder">
+								<img class="image" src="../../../assets/images/logo.png">
+							</div>
+							<div class="text-holder">
+								Challenges in understanding different epistemologies for studying learning...
+							</div>
+						</div>
+					</div>
+					
+					<div class="show-more-box">
+						<div class="show-more">Show more...</div>
+					</div>
+				</div>
+				
+				<div class="content-box yamv-box">
+					<div class="title-box">
+						Your Articles Most Viewed
+					</div>
+					
+					<div class="hint-box">
+						Time-Saving Tools designed with the research process in mind.
+					</div>
+					
+					<div class="hint-box highlight">
+						Curriculum assessment and development
+					</div>
+					
+					<div class="hint-box">
+						Student recruitment and retention
+					</div>
+					
+					<div class="show-more-box">
+						<div class="show-more">Show more...</div>
+					</div>
+				</div>
+				
+				<div class="content-box yn-box">
+					<div class="title-box">
+						Your Network
+					</div>
+					
+					<div class="contacts-wrapper">
+						<div class="contacts-row numbers-holder">
+							<div class="number dc-number">0</div>
+							<div class="number cc-number">0</div>
+							<div class="number 3lc-number">0</div>
+						</div>
+						
+						<div class="contacts-row text-holder">
+							<div class="text dc-number">Direct Contacts</div>
+							<div class="text cc-number">Contacts of your Contact</div>
+							<div class="text 3lc-number">3rd Level Contacts</div>
+						</div>
+					</div>
+					
+					<div class="action-link-box">
+						<i class="fa fa-chevron-right icon" aria-hidden="true"></i>
+						<span>Expand your network now!</span>
+					</div>
+				</div>
+				
+				<div class="content-box last-box inv-box">
+					<div class="title-box">
+						Invite people to join Taksh
+					</div>
+					
+					<div class="input-box">
+						<input type="email" placeholder="Separate e-mail addresses with commas" class="input-field email-input">
+					</div>
+					
+					<div class="send-btn-box">
+						<button type="button" class="send-btn">Send Investition</button>
+					</div>
+					
+					<div class="action-link-box">
+						<i class="fa fa-chevron-right icon" aria-hidden="true"></i>
+						<span>Add an invitation message</span>
+					</div>
+				</div>
+			</div>
+			
+			<my-recent-activities [recentActivities]="recentActivities"></my-recent-activities>
+			
+			<my-recommendations [recommendations]="recommendations"></my-recommendations>
+		</div>
+		
+	</section>
+</section>
